@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1"
+    tools:context=".MainMenuActivity" >
+
+    <ImageView
+        android:id="@+id/imgViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:background="@null"
+        android:contentDescription="@string/imgview_description_title"
+        android:src="@drawable/img_title_xl" />
+
+    <ImageButton
+        android:id="@+id/btnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="217dp"
+        android:background="@null"
+        android:contentDescription="@string/imgbtn_description_play"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_play"
+        android:onClick="onBtnPlayPressed" />
+
+</RelativeLayout>
