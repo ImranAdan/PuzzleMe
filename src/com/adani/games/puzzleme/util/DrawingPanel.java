@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.adani.games.puzzleme.views;
+package com.adani.games.puzzleme.util;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.adani.games.puzzleme.util.MainThread;
 
 /**
  * @author Imran Adan

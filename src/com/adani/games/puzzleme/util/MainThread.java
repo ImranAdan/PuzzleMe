@@ -6,11 +6,10 @@ package com.adani.games.puzzleme.util;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
-import com.adani.games.puzzleme.views.DrawingPanel;
 
 /**
- * Main game thread class, used to render and update objects in real time.
- * 
+ * This is the main class that represents the game thread aka the "Game Loop". This class use the concept of render and update cycles
+ * to change the state of the drawing panel. 
  * @author Imran Adan
  */
 public class MainThread extends Thread {

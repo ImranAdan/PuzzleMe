@@ -1,4 +1,8 @@
-package com.adani.games.puzzleme;
+package com.adani.games.puzzleme.views;
+
+import com.adani.games.puzzleme.R;
+import com.adani.games.puzzleme.R.id;
+import com.adani.games.puzzleme.R.layout;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
