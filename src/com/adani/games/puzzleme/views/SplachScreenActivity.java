@@ -19,7 +19,7 @@ import com.adani.games.puzzleme.util.Debuggable;
  * 
  */
 public class SplachScreenActivity extends Activity implements Debuggable {
-	
+
 	public static final String TAG = SplachScreenActivity.class.getSimpleName();
 
 	@Override
@@ -27,71 +27,36 @@ public class SplachScreenActivity extends Activity implements Debuggable {
 		super.onCreate(savedInstanceState);
 		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_splach_screen);
 
 		load();
 		print("Splash Screen Started...");
 	}
 
+	/**
+	 * Load any required resources here before starting the 
+	 * main menu.
+	 */
 	private void load() {
 		Runnable delay = new Runnable() {
 			@Override
 			public void run() {
 				finish();
-				Intent intent = new Intent(SplachScreenActivity.this, MainMenuActivity.class);
+				Intent intent = new Intent(SplachScreenActivity.this,
+						MainMenuActivity.class);
 				startActivity(intent);
-				overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			}
 
 		};
-		
+
 		Handler handler = new Handler();
 		handler.postDelayed(delay, 3000);
 	}
 
 	@Override
 	public void print(String message) {
-		Log.d(Debuggable.DEBUG, TAG + ":" +  message);
-	}
-
-	@Override
-	protected void onRestart() {
-		super.onRestart();
-		print("Restarting Activity");
-
-	}
-	
-	@Override
-	protected void onStart() {
-		super.onStart();
-		print("Starting Activity");
-
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		print("Resuming Activity");
-	}
-
-
-	@Override
-	protected void onPause() {
-		super.onPause();
-		print("Pausing Activity");
-	}
-	
-	@Override
-	protected void onStop() {
-		super.onStop();
-		print("Stoping Activity");
-
-	}
-	
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		print("Destroying Activity");
+		Log.d(Debuggable.DEBUG + TAG + ":", message);
 	}
 }

@@ -35,11 +35,11 @@
         android:layout_height="100dp"
         android:layout_alignLeft="@+id/imgBtnPlay"
         android:layout_below="@+id/imgBtnPlay"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:background="@null"
         android:contentDescription="@string/imgbtn_description_play"
         android:scaleType="fitXY"
-        android:src="@drawable/btn_play" />
+        android:src="@drawable/btn_levels" />
 
     <ImageButton
         android:id="@+id/imgBtnAbout"
@@ -47,11 +47,11 @@
         android:layout_height="100dp"
         android:layout_alignLeft="@+id/imgBtnLevels"
         android:layout_below="@+id/imgBtnLevels"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:background="@null"
         android:contentDescription="@string/imgbtn_description_play"
         android:onClick="onBtnPlayPressed"
         android:scaleType="fitXY"
-        android:src="@drawable/btn_play" />
+        android:src="@drawable/btn_about" />
 
 </RelativeLayout>
