@@ -17,9 +17,9 @@
         android:src="@drawable/img_title_xl" />
 
     <ImageButton
-        android:id="@+id/btnPlay"
+        android:id="@+id/imgBtnPlay"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="217dp"
@@ -28,5 +28,30 @@
         android:scaleType="fitXY"
         android:src="@drawable/btn_play"
         android:onClick="onBtnPlayPressed" />
+
+    <ImageButton
+        android:id="@+id/imgBtnLevels"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/imgBtnPlay"
+        android:layout_below="@+id/imgBtnPlay"
+        android:layout_marginTop="25dp"
+        android:background="@null"
+        android:contentDescription="@string/imgbtn_description_play"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_play" />
+
+    <ImageButton
+        android:id="@+id/imgBtnAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/imgBtnLevels"
+        android:layout_below="@+id/imgBtnLevels"
+        android:layout_marginTop="25dp"
+        android:background="@null"
+        android:contentDescription="@string/imgbtn_description_play"
+        android:onClick="onBtnPlayPressed"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_play" />
 
 </RelativeLayout>

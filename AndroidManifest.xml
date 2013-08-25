@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -23,8 +23,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name = "com.adani.games.puzzleme.views.MainMenuActivity"
-            android:label="@string/title_activity_main_menu" >
+            android:name="com.adani.games.puzzleme.views.MainMenuActivity"
+            android:label="@string/title_activity_main_menu"
+            android:launchMode="singleInstance" >
         </activity>
     </application>
 

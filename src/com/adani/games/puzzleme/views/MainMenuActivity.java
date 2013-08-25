@@ -1,20 +1,24 @@
 package com.adani.games.puzzleme.views;
 
-import com.adani.games.puzzleme.R;
-import com.adani.games.puzzleme.R.id;
-import com.adani.games.puzzleme.R.layout;
-
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-public class MainMenuActivity extends Activity {
+import com.adani.games.puzzleme.R;
+import com.adani.games.puzzleme.util.Debuggable;
+
+public class MainMenuActivity extends Activity implements Debuggable {
+
+	public static final String TAG = MainMenuActivity.class.getSimpleName();
+
 	boolean pressed = false;
-	private ImageButton imgBtnPlay;
+	ImageButton imgBtnPlay;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,20 +27,40 @@ public class MainMenuActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main_menu);
-		
-		initComponents();
+		configureComponents();
+		print("Main Menu Started...");
+	}
 
+	private void configureComponents(){
+		imgBtnPlay = (ImageButton) findViewById(R.id.imgBtnPlay);
+		imgBtnPlay.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				MainMenuActivity.this.finish();
+			}
+		});
 	}
 	
-	public void onBtnPlayPressed(View v){	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		print("Resuming Activity");
+	}
+	@Override
+	protected void onPause() {
+		super.onPause();
+		print("Pausing Activity");
+	}
+	@Override
+	protected void onStop() {
+		super.onStop();
+		print("Stoping Activity");
 	}
 
 
-	/**
-	 * Initialise all the components here.
-	 */
-	private void initComponents(){
-		imgBtnPlay = (ImageButton) findViewById(R.id.btnPlay);
+	public void print(String message) {
+		Log.d(DEBUG, TAG + ":" +  message);
 	}
+	
 
 }

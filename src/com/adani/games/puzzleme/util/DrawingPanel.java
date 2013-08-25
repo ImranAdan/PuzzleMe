@@ -19,26 +19,26 @@ public class DrawingPanel extends SurfaceView implements SurfaceHolder.Callback{
 	
 	public static final String TAG = DrawingPanel.class.getSimpleName();
 	
-	private MainThread gameThread;
+	private GameThread gameThread;
 
 	public DrawingPanel(Context context) {
 		super(context);
 		getHolder().addCallback(this);
-		gameThread = new MainThread(getHolder(), this);
+		gameThread = new GameThread(getHolder(), this);
 		setFocusable(true);
 	}
 
 	public DrawingPanel(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		getHolder().addCallback(this);
-		gameThread = new MainThread(getHolder(), this);
+		gameThread = new GameThread(getHolder(), this);
 		setFocusable(true);
 	}
 
 	public DrawingPanel(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		getHolder().addCallback(this);
-		gameThread = new MainThread(getHolder(), this);
+		gameThread = new GameThread(getHolder(), this);
 		setFocusable(true);
 	}
 	
@@ -60,6 +60,7 @@ public class DrawingPanel extends SurfaceView implements SurfaceHolder.Callback{
 		p("END Calling Shutdown");
 	}
 	
+	
 	public void update(){
 		//TODO Update models
 	}
@@ -71,7 +72,7 @@ public class DrawingPanel extends SurfaceView implements SurfaceHolder.Callback{
 	public void initiate(){
         if (gameThread.getState() == Thread.State.TERMINATED) {
     		p("Thread was terminated... creating new thread");
-        	gameThread = new MainThread(getHolder(), this);
+        	gameThread = new GameThread(getHolder(), this);
         	gameThread.setRunning(true);
         	gameThread.start();
         }
