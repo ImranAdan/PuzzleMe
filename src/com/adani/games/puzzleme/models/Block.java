@@ -18,6 +18,12 @@ public class Block extends DrawableAsset {
 	}
 
 	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
 	public void draw(Canvas canvas) {
 		// TODO Auto-generated method stub
 	}

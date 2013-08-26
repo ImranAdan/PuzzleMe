@@ -10,8 +10,12 @@ import android.graphics.Canvas;
  * @author Imran Adan
  *
  */
-public interface Renderable {
+public interface RenderCycle {
 
+	/**
+	 * Update the internal properties of this object.
+	 */
+	void update();
 	/**
 	 * Draw to the canvas surface.
 	 * @param canvas The canvas to be drawn to.

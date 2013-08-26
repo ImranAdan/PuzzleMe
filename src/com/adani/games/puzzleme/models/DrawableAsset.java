@@ -7,7 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import com.adani.games.puzzleme.R;
-import com.adani.games.puzzleme.models.core.Renderable;
+import com.adani.games.puzzleme.models.core.RenderCycle;
 import com.adani.games.puzzleme.models.core.Vector2D;
 import com.adani.games.puzzleme.util.GameResources;
 
@@ -17,7 +17,7 @@ import com.adani.games.puzzleme.util.GameResources;
  * @author Imran Adan
  *
  */
-public abstract class DrawableAsset implements Renderable {
+public abstract class DrawableAsset implements RenderCycle {
 
 	public static final Bitmap GAME_BACKGROUND = BitmapFactory.decodeResource(GameResources.resources, R.drawable.bg);
 	
