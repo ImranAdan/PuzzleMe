@@ -3,47 +3,41 @@
  */
 package com.adani.games.puzzleme.models;
 
+import android.graphics.Bitmap;
+
+import com.adani.games.puzzleme.models.core.Renderable;
+import com.adani.games.puzzleme.models.core.Vector2D;
+
 /**
  * A {@link DrawableAsset} is any asset which can be updated and rendered 
  * to the canvas.
  * @author Imran Adan
  *
  */
-public class DrawableAsset {
+public abstract class DrawableAsset implements Renderable {
 
-	private float x;
-	private float y;
 	
-	public DrawableAsset(float x, float y) {
-		this.x = x;
-		this.y = y;
+	private Vector2D vector2D;
+	private Bitmap bitmap;
+	
+	
+	public DrawableAsset(Vector2D v) {
+		this.setVector2D(v);
 	}
 
-	/**
-	 * @return the x
-	 */
-	public float getX() {
-		return x;
+	public Vector2D getVector2D() {
+		return vector2D;
 	}
 
-	/**
-	 * @param x the x to set
-	 */
-	public void setX(float x) {
-		this.x = x;
+	public void setVector2D(Vector2D vector2D) {
+		this.vector2D = vector2D;
 	}
 
-	/**
-	 * @return the y
-	 */
-	public float getY() {
-		return y;
+	public Bitmap getBitmap() {
+		return bitmap;
 	}
 
-	/**
-	 * @param y the y to set
-	 */
-	public void setY(float y) {
-		this.y = y;
+	public void setBitmap(Bitmap bitmap) {
+		this.bitmap = bitmap;
 	}
 }
