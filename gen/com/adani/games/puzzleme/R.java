@@ -38,30 +38,35 @@ public final class R {
         public static final int btn_play=0x7f020006;
         public static final int btn_play_pressed=0x7f020007;
         public static final int ic_launcher=0x7f020008;
-        public static final int img_levels=0x7f020009;
-        public static final int img_title_xl=0x7f02000a;
-        public static final int logo=0x7f02000b;
-        public static final int splash=0x7f02000c;
+        public static final int img_banner_game=0x7f020009;
+        public static final int img_levels=0x7f02000a;
+        public static final int img_title_xl=0x7f02000b;
+        public static final int logo=0x7f02000c;
+        public static final int splash=0x7f02000d;
     }
     public static final class id {
-        public static final int action_settings=0x7f090007;
-        public static final int btnPlay=0x7f090002;
-        public static final int imgBtnAbout=0x7f090005;
-        public static final int imgBtnLevels=0x7f090004;
-        public static final int imgBtnPlay=0x7f090003;
-        public static final int imgViewLevels=0x7f090000;
-        public static final int imgViewTitle=0x7f090001;
-        public static final int pbSplashScreen=0x7f090006;
+        public static final int action_settings=0x7f090009;
+        public static final int btnPlay=0x7f090004;
+        public static final int drawingPanel=0x7f090001;
+        public static final int imgBtnAbout=0x7f090007;
+        public static final int imgBtnLevels=0x7f090006;
+        public static final int imgBtnPlay=0x7f090005;
+        public static final int imgViewBanner=0x7f090000;
+        public static final int imgViewLevels=0x7f090002;
+        public static final int imgViewTitle=0x7f090003;
+        public static final int pbSplashScreen=0x7f090008;
     }
     public static final class layout {
-        public static final int activity_level_select=0x7f030000;
-        public static final int activity_main_menu=0x7f030001;
-        public static final int activity_splach_screen=0x7f030002;
+        public static final int activity_game=0x7f030000;
+        public static final int activity_level_select=0x7f030001;
+        public static final int activity_main_menu=0x7f030002;
+        public static final int activity_splach_screen=0x7f030003;
     }
     public static final class menu {
-        public static final int level_select=0x7f080000;
-        public static final int main_menu=0x7f080001;
-        public static final int splach_screen=0x7f080002;
+        public static final int game=0x7f080000;
+        public static final int level_select=0x7f080001;
+        public static final int main_menu=0x7f080002;
+        public static final int splach_screen=0x7f080003;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
@@ -72,6 +77,7 @@ public final class R {
         public static final int imgview_description_level=0x7f06000a;
         public static final int imgview_description_title=0x7f060006;
         public static final int title_activity_finisher=0x7f060005;
+        public static final int title_activity_game=0x7f06000b;
         public static final int title_activity_level_select=0x7f060009;
         public static final int title_activity_main_menu=0x7f060004;
         public static final int title_activity_splach_screen=0x7f060003;

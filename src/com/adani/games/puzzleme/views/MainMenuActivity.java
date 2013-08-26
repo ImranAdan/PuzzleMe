@@ -1,6 +1,7 @@
 package com.adani.games.puzzleme.views;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +19,7 @@ public class MainMenuActivity extends Activity implements Debuggable {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	
 		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -29,6 +30,9 @@ public class MainMenuActivity extends Activity implements Debuggable {
 
 	public void onBtnPlayPressed(View v) {
 		print("Starting new game");
+		Intent intent = new Intent(getBaseContext(), GameActivity.class);
+		startActivity(intent);
+		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	}
 
 	public void onBtnLevelsPressed(View v) {

@@ -3,6 +3,8 @@
  */
 package com.adani.games.puzzleme.util;
 
+import com.adani.games.puzzleme.models.DrawableAsset;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
@@ -67,6 +69,10 @@ public class DrawingPanel extends SurfaceView implements SurfaceHolder.Callback{
 
 	public void render(Canvas canvas){
 		//TODO Render Models
+		
+		if(canvas != null){
+			canvas.drawBitmap(DrawableAsset.GAME_BACKGROUND, 0, 0, null);
+		}
 	}
 	
 	public void initiate(){

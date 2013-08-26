@@ -11,6 +11,7 @@ import android.view.WindowManager;
 
 import com.adani.games.puzzleme.R;
 import com.adani.games.puzzleme.util.Debuggable;
+import com.adani.games.puzzleme.util.GameResources;
 
 /**
  * Splash Screen, used to introduce the game and load any heavy resources.
@@ -31,10 +32,17 @@ public class SplachScreenActivity extends Activity implements Debuggable {
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_splach_screen);
 
+		configureGameResources();
 		load();
 		print("Splash Screen Started...");
 	}
 
+	
+	private void configureGameResources(){
+		GameResources.resources = getResources();
+	}
+
+	
 	/**
 	 * Load any required resources here before starting the 
 	 * main menu.
@@ -47,12 +55,14 @@ public class SplachScreenActivity extends Activity implements Debuggable {
 				Intent intent = new Intent(SplachScreenActivity.this,
 						MainMenuActivity.class);
 				startActivity(intent);
+				overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			}
 
 		};
 
 		Handler handler = new Handler();
 		handler.postDelayed(delay, 3000);
+
 	}
 
 	@Override

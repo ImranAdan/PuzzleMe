@@ -31,6 +31,11 @@
             android:name="com.adani.games.puzzleme.views.LevelSelectActivity"
             android:label="@string/title_activity_level_select" >
         </activity>
+        <activity
+            android:name="com.adani.games.puzzleme.views.GameActivity"
+            android:label="@string/title_activity_game" 
+            android:screenOrientation="landscape"  >
+        </activity>
     </application>
 
 </manifest>

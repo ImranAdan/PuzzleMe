@@ -10,8 +10,8 @@
     <string name="imgview_description_title"> Image of the games title</string>
     <string name="imgbtn_description_play">An Image of a play button</string>
     <string name="imgbtn_description_quit">An Image of a quit button</string>
-    
     <string name="title_activity_level_select">LevelSelectActivity</string>
     <string name="imgview_description_level">Image of level title</string>
+    <string name="title_activity_game">GameActivity</string>
 
 </resources>
