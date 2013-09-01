@@ -17,8 +17,7 @@ import com.adani.games.puzzleme.util.GameResources;
  */
 
 public class Ball extends DrawableAsset {
-	
-	
+
 	public static final Bitmap BALL_BITMAP;
 	
 	static {
@@ -33,7 +32,8 @@ public class Ball extends DrawableAsset {
 
 	@Override
 	public void update() {
-		if(atEdge())
+		//TODO: Update the state of the ball depending on the loaction.
+		
 	}
 	
 	@Override

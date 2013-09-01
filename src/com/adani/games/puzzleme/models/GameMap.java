@@ -8,11 +8,21 @@ import com.adani.games.puzzleme.util.Debuggable;
 
 public class GameMap implements Debuggable, RenderCycle {
 
-	private final int MAP_WIDTH;
-	private final int MAP_HEIGHT;
+	private static GameMap instance;
+	private static int MAP_WIDTH;
+	private static int MAP_HEIGHT;
 	
+	public static GameMap createGameMap(int width, int height){
+		if(instance == null){
+			instance = new GameMap(width, height);
+		}
+		return instance;
+	}
+	public static GameMap getInstance() {
+		return instance;
+	}
 	
-	public GameMap(int width, int height){
+	private GameMap(int width, int height){
 		MAP_WIDTH = width;
 		MAP_HEIGHT = height;
 	}
@@ -42,6 +52,6 @@ public class GameMap implements Debuggable, RenderCycle {
 	}
 	
 	public static boolean atWorldEdge(float x, float y){
-		return x < 0 || x > 0;
+		return x < 0 || x > MAP_WIDTH || y < 0 || y > MAP_HEIGHT;
 	}
 }

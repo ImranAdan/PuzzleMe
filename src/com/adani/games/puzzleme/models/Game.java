@@ -32,7 +32,7 @@ public class Game implements RenderCycle {
 	}
 	
 	private Game(int mapWidth, int mapHeight){
-		map = new GameMap(mapWidth, mapHeight);
+		map = GameMap.createGameMap(mapWidth, mapHeight);
 		
 		float cx = map.getMAP_WIDTH() / 2;
 		float cy = map.getMAP_HEIGHT() / 2;
