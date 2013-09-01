@@ -14,6 +14,8 @@ import com.adani.games.puzzleme.models.Game;
 
 public class GameActivity extends Activity implements SensorEventListener {
 	
+	public static final String TAG = GameActivity.class.getSimpleName();
+	
 	private Sensor accelerometer;
 	private SensorManager sm;
 
@@ -29,19 +31,23 @@ public class GameActivity extends Activity implements SensorEventListener {
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_game);
 		
-		
+		initialiseSensorManager();
+	}
+
+	private void initialiseSensorManager(){
 		sm = (SensorManager) getSystemService(SENSOR_SERVICE);
 		accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 		sm.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-		
 	}
-
+	
+	
+	
 	@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {}
-
 	@Override
 	public void onSensorChanged(SensorEvent event) {
-		if(Game.getInstance()!= null)
+		if(Game.getInstance()!= null){
 			Game.getInstance().updateBallCoordinates(event.values);
+		}
 	}	
 }

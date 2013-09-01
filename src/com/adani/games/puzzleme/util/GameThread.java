@@ -67,6 +67,7 @@ public class GameThread extends Thread {
 					} else {
 						startTime = System.currentTimeMillis();
 						framesSkipped = 0;
+						DRAWING_PANEL.update();
 						DRAWING_PANEL.render(canvas);
 						timeDelta = System.currentTimeMillis() - startTime;
 						sleepTime = (int) (FRAME_PERIOD - timeDelta);

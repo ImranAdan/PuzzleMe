@@ -4,7 +4,9 @@
 package com.adani.games.puzzleme.util;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -21,6 +23,7 @@ public class DrawingPanel extends SurfaceView implements SurfaceHolder.Callback{
 	
 	public static final String TAG = DrawingPanel.class.getSimpleName();
 	
+	private static Canvas c;
 	private Game game;
 	private GameThread gameThread;
 
@@ -65,11 +68,14 @@ public class DrawingPanel extends SurfaceView implements SurfaceHolder.Callback{
 	
 	
 	public void update(){
-		//TODO Update models
+		if (game != null){
+			game.update();
+		}
 	}
 
 	public void render(Canvas canvas){
 		if(canvas != null && game != null){
+			c = canvas;
 			game.draw(canvas);
 		}
 	}
@@ -104,5 +110,10 @@ public class DrawingPanel extends SurfaceView implements SurfaceHolder.Callback{
 
 	public void p(String message){
 		Log.d(TAG, "Debug -- " + message);
+	}
+	
+	public static void priorityRender(Bitmap bitmap, float left, float top, Paint paint){
+		if(c != null)
+			c.drawBitmap(bitmap, left, top, paint);
 	}
 }

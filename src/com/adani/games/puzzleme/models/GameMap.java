@@ -9,8 +9,8 @@ import com.adani.games.puzzleme.util.Debuggable;
 public class GameMap implements Debuggable, RenderCycle {
 
 	private static GameMap instance;
-	private static int MAP_WIDTH;
-	private static int MAP_HEIGHT;
+	public static int MAP_WIDTH;
+	public static int MAP_HEIGHT;
 	
 	public static GameMap createGameMap(int width, int height){
 		if(instance == null){
@@ -18,6 +18,7 @@ public class GameMap implements Debuggable, RenderCycle {
 		}
 		return instance;
 	}
+	
 	public static GameMap getInstance() {
 		return instance;
 	}
@@ -36,13 +37,12 @@ public class GameMap implements Debuggable, RenderCycle {
 	}
 
 	@Override
-	public void update() {
+	public <T> void update(T... properties){
 		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void draw(Canvas canvas) {
-		print("Drawing Background...");
 		canvas.drawBitmap(DrawableAsset.GAME_BACKGROUND, 0, 0, null);
 	}
 

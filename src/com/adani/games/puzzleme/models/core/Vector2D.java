@@ -34,8 +34,13 @@ public class Vector2D {
 	}
 	
 	
-	public Vector2D multiplyByScalar(Vector2D v, float scalar) {
+	public Vector2D multiplyByScalar(Vector2D v, int scalar) {
 		return new Vector2D(v.x * scalar, v.y * scalar);
+	}
+	
+	public void multiplyByScalarCon(float scalar){
+		this.x *= scalar;
+		this.y *= scalar;
 	}
 
 	/* (non-Javadoc)
@@ -44,5 +49,10 @@ public class Vector2D {
 	@Override
 	public String toString() {
 		return "Vector2D [x=" + x + ", y=" + y + "]";
+	}
+
+	public void add(Vector2D vector2d) {
+		this.x += vector2d.x;
+		this.y += vector2d.y;
 	}
 }

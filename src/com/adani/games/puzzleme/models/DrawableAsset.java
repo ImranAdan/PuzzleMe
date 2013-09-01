@@ -21,20 +21,30 @@ public abstract class DrawableAsset implements RenderCycle {
 
 	public static final Bitmap GAME_BACKGROUND = BitmapFactory.decodeResource(GameResources.resources, R.drawable.bg);
 	
-	private Vector2D vector2D;
+	private Vector2D position;
+	private Vector2D velocity;
+	
 	private Bitmap bitmap;
 	
 	
 	public DrawableAsset(Vector2D v) {
-		this.setVector2D(v);
+		this.setPosition(v);
 	}
 
-	public Vector2D getVector2D() {
-		return vector2D;
+	public Vector2D getPosition() {
+		return position;
 	}
 
-	public void setVector2D(Vector2D vector2D) {
-		this.vector2D = vector2D;
+	public void setPosition(Vector2D position) {
+		this.position = position;
+	}
+
+	public Vector2D getVelocity() {
+		return velocity;
+	}
+
+	public void setVelocity(Vector2D velocity) {
+		this.velocity = velocity;
 	}
 
 	public Bitmap getBitmap() {

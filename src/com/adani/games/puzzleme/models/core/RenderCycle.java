@@ -15,7 +15,7 @@ public interface RenderCycle {
 	/**
 	 * Update the internal properties of this object.
 	 */
-	void update();
+	 <T> void update(T... properties);
 	/**
 	 * Draw to the canvas surface.
 	 * @param canvas The canvas to be drawn to.

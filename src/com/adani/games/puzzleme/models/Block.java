@@ -18,7 +18,7 @@ public class Block extends DrawableAsset {
 	}
 
 	@Override
-	public void update() {
+	public <T> void update(T... properties){
 		// TODO Auto-generated method stub
 		
 	}
