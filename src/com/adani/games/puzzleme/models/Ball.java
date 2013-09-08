@@ -15,6 +15,7 @@ import com.adani.games.puzzleme.util.GameResources;
 /**
  * 
  * Ball.
+ * 
  * @author Imran Adan
  * 
  */
@@ -24,7 +25,7 @@ public class Ball extends DrawableAsset {
 	public static final String TAG = Ball.class.getSimpleName();
 	public static final Bitmap BALL_BITMAP;
 
-	public static final int SPEED = 5;
+	public static final int SPEED = 3;
 
 	static {
 		Bitmap b = BitmapFactory.decodeResource(GameResources.resources,
@@ -45,6 +46,7 @@ public class Ball extends DrawableAsset {
 			getPosition().x += ((Float) properties[0] * (Ball.SPEED));
 			getPosition().y += ((Float) properties[1] * (Ball.SPEED));
 		}
+
 	}
 
 	@Override
@@ -64,12 +66,15 @@ public class Ball extends DrawableAsset {
 					- (getBitmap().getHeight() / 2);
 	}
 
+	/*
+	 * TODO: Correct the collisions.
+	 */
 	private boolean atRightEdge() {
 		return getPosition().x + (getBitmap().getWidth() / 2) > GameMap.MAP_WIDTH;
 	}
 
 	private boolean atBottomEdge() {
-		return getPosition().y + (getBitmap().getHeight() / 2) > GameMap.MAP_HEIGHT;
+		return getPosition().y + (getBitmap().getHeight() / 2) >= GameMap.MAP_HEIGHT;
 	}
 
 	private boolean atTopEdge() {

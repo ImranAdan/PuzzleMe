@@ -112,6 +112,14 @@ public class DrawingPanel extends SurfaceView implements SurfaceHolder.Callback{
 		Log.d(TAG, "Debug -- " + message);
 	}
 	
+	/**
+	 * ONLY use when an urgent render is required. This 
+	 * method will paint a given bitmap to the Drawing Panel.
+	 * @param bitmap The bitmap to be drawn.
+	 * @param left x
+	 * @param top y
+	 * @param paint The paint object to be used to render this object. 
+	 */
 	public static void priorityRender(Bitmap bitmap, float left, float top, Paint paint){
 		if(c != null)
 			c.drawBitmap(bitmap, left, top, paint);

@@ -22,6 +22,7 @@ public class Game implements RenderCycle {
 
 	private GameMap map;
 	private Ball ball;
+	private Block block;
 
 	public static Game createNewGame(int mapWidth, int mapHeight) {
 		if (game == null)
@@ -38,21 +39,23 @@ public class Game implements RenderCycle {
 		int cx = map.getMAP_WIDTH() / 2;
 		int cy = map.getMAP_HEIGHT() / 2;
 		ball = new Ball(new Vector2D(cx, cy));
+		block = new Block(new Vector2D(cx + 100, cy + 100));
 	}
 
 	@Override
 	public <T> void update(T... properties){
 		ball.update(properties);
+		block.update(properties);
 	}
 
 	@Override
 	public void draw(Canvas canvas) {
 		map.draw(canvas);
 		ball.draw(canvas);
+		block.draw(canvas);
 	}
 
 	public void updateBallCoordinates(float... values) {
 		ball.update(-values[0], values[1]);
-		//DrawingPanel.priorityRender(ball.getBitmap(), ball.getPosition().x, ball.getPosition().y, null);
 	}
 }
