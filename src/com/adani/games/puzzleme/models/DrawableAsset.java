@@ -5,6 +5,7 @@ package com.adani.games.puzzleme.models;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Paint;
 
 import com.adani.games.puzzleme.R;
 import com.adani.games.puzzleme.models.core.RenderCycle;
@@ -21,47 +22,21 @@ public abstract class DrawableAsset implements RenderCycle {
 
 	public static final Bitmap GAME_BACKGROUND = BitmapFactory.decodeResource(GameResources.resources, R.drawable.bg);
 	
-	private Vector2D position;
-	private Vector2D velocity;
+	/* Geometric properties */
+	protected Vector2D position;
+	protected Vector2D velocity;
+	protected float angle;
 	
-	private Bitmap bitmap;
+	/* Bitmap properties */
+	protected Bitmap bitmap;
 	
-	private float angle;
-
 	
-	public DrawableAsset(Vector2D v) {
-		this.setPosition(v);
+	/* Paint properties */
+	protected Paint paint;
+	
+	DrawableAsset(Vector2D v) {
+		position = v;
+		
+		paint = new Paint();
 	}
-
-	public Vector2D getPosition() {
-		return position;
-	}
-
-	public void setPosition(Vector2D position) {
-		this.position = position;
-	}
-
-	public Vector2D getVelocity() {
-		return velocity;
-	}
-
-	public void setVelocity(Vector2D velocity) {
-		this.velocity = velocity;
-	}
-
-	public Bitmap getBitmap() {
-		return bitmap;
-	}
-
-	public void setBitmap(Bitmap bitmap) {
-		this.bitmap = bitmap;
-	}
-
-	public float getAngle() {
-		return angle;
-	}
-
-	public void setAngle(float angle) {
-		this.angle = angle;
-	}	
 }

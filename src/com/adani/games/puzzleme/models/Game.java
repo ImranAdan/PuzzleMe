@@ -39,20 +39,20 @@ public class Game implements RenderCycle {
 		int cx = map.getMAP_WIDTH() / 2;
 		int cy = map.getMAP_HEIGHT() / 2;
 		ball = new Ball(new Vector2D(cx, cy));
-		block = new Block(new Vector2D(cx + 100, cy + 100));
+		//block = new Block(new Vector2D(cx + 100, cy + 100));
 	}
 
 	@Override
 	public <T> void update(T... properties){
 		ball.update(properties);
-		block.update(properties);
+		//block.update(properties);
 	}
 
 	@Override
 	public void draw(Canvas canvas) {
 		map.draw(canvas);
 		ball.draw(canvas);
-		block.draw(canvas);
+		//block.draw(canvas);
 	}
 
 	public void updateBallCoordinates(float... values) {
