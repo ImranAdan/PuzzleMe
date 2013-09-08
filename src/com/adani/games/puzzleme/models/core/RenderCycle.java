@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 /**
  * Renders object to the surface.
  * @author Imran Adan
+ * @version 0.0.1
  *
  */
 public interface RenderCycle {
