@@ -18,11 +18,14 @@ import com.adani.games.puzzleme.util.GameResources;
 public class Block extends DrawableAsset {
 
 	public static final String TAG = Block.class.getSimpleName();
+	
 	public static final Bitmap BLOCK_BITMAP;
+	public static final int BLOCK_WIDTH = 256;
+	public static final int BLOCK_HEIGHT = 64;
 	
 	static{
 		Bitmap b = BitmapFactory.decodeResource(GameResources.resources, R.drawable.block);
-		BLOCK_BITMAP = Bitmap.createScaledBitmap(b, 256, 64, true);
+		BLOCK_BITMAP = Bitmap.createScaledBitmap(b, BLOCK_WIDTH, BLOCK_HEIGHT, true);
 	}
 	
 	public Block(Vector2D v) {

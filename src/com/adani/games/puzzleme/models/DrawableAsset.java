@@ -26,6 +26,8 @@ public abstract class DrawableAsset implements RenderCycle {
 	
 	private Bitmap bitmap;
 	
+	private float angle;
+
 	
 	public DrawableAsset(Vector2D v) {
 		this.setPosition(v);
@@ -53,5 +55,13 @@ public abstract class DrawableAsset implements RenderCycle {
 
 	public void setBitmap(Bitmap bitmap) {
 		this.bitmap = bitmap;
+	}
+
+	public float getAngle() {
+		return angle;
+	}
+
+	public void setAngle(float angle) {
+		this.angle = angle;
 	}	
 }

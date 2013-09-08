@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.adani.games.puzzleme.R;
 import com.adani.games.puzzleme.models.core.Vector2D;
+import com.adani.games.puzzleme.util.Debuggable;
 import com.adani.games.puzzleme.util.GameResources;
 
 /**
@@ -20,18 +21,18 @@ import com.adani.games.puzzleme.util.GameResources;
  * 
  */
 
-public class Ball extends DrawableAsset {
+public class Ball extends DrawableAsset implements Debuggable {
 
 	public static final String TAG = Ball.class.getSimpleName();
-	public static final Bitmap BALL_BITMAP;
 
-	public static final int SPEED = 3;
+	/* Set up bitmap properties */
+	public static final int BALL_WIDTH = 64;
+	public static final int BALL_HEIGHT = 64;
+	public static final Bitmap BALL_BITMAP = Bitmap.createScaledBitmap(
+			BitmapFactory.decodeResource(GameResources.resources,
+					R.drawable.ball), BALL_WIDTH, BALL_HEIGHT, true);
 
-	static {
-		Bitmap b = BitmapFactory.decodeResource(GameResources.resources,
-				R.drawable.ball);
-		BALL_BITMAP = Bitmap.createScaledBitmap(b, 64, 64, true);
-	}
+	public static final float SPEED = 3f;
 
 	public Ball(Vector2D v) {
 		super(v);
@@ -94,6 +95,11 @@ public class Ball extends DrawableAsset {
 	public String toString() {
 		return "Ball [getPosition()=" + getPosition().toString()
 				+ ", getVelocity()=" + getVelocity().toString() + "]";
+	}
+
+	@Override
+	public void print(String message) {
+		Log.d(DEBUG + TAG, message);
 	}
 
 }
