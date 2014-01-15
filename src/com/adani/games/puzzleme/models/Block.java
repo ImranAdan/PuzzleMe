@@ -29,7 +29,7 @@ public class Block extends DrawableAsset {
 	public Block(Vector2D v) {
 		super(v);
 		bitmap = BLOCK_BITMAP;
-		velocity = new Vector2D(1, 0);
+		velocity = new Vector2D(0, 0);
 	}
 
 	@Override

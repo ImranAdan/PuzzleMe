@@ -31,8 +31,7 @@ public class Ball extends DrawableAsset implements Debuggable {
 	private static final float BALL_RADIUS = 32f;
 	public static final Bitmap BALL_BITMAP = Bitmap.createScaledBitmap(
 			BitmapFactory.decodeResource(GameResources.resources,
-					R.drawable.ball), (int) BALL_RADIUS, (int) BALL_RADIUS,
-			true);
+					R.drawable.ball), 64, 64, true);
 
 	public static final float SPEED = 4f;
 
@@ -57,6 +56,7 @@ public class Ball extends DrawableAsset implements Debuggable {
 	@Override
 	public void draw(Canvas canvas) {
 		canvas.drawCircle(position.x, position.y, BALL_RADIUS, paint);
+		//canvas.drawBitmap(bitmap, position.x, position.y, paint);
 	}
 
 	private void resolveMapBoundsCollisions() {
@@ -85,6 +85,7 @@ public class Ball extends DrawableAsset implements Debuggable {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
